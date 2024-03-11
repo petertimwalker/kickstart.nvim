@@ -554,6 +554,7 @@ require('lazy').setup {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         solargraph = {},
+        tsserver = {},
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
@@ -642,7 +643,21 @@ require('lazy').setup {
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
-        -- javascript = { { "prettierd", "prettier" } },
+        --[[         javascript = { { 'prettierd', 'prettier' } }, ]]
+      },
+      ft_parsers = {
+        javascript = 'babel',
+        javascriptreact = 'babel',
+        typescript = 'typescript',
+        typescriptreact = 'typescript',
+        css = 'css',
+        scss = 'scss',
+        html = 'html',
+        json = 'json',
+        jsonc = 'json',
+        yaml = 'yaml',
+        markdown = 'markdown',
+        graphql = 'graphql',
       },
     },
   },
@@ -762,6 +777,11 @@ require('lazy').setup {
 
   -- tmux & split window navigation
   { 'christoomey/vim-tmux-navigator' },
+  {
+    'pmizio/typescript-tools.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+    opts = {},
+  },
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
@@ -811,7 +831,7 @@ require('lazy').setup {
 
       ---@diagnostic disable-next-line: missing-fields
       require('nvim-treesitter.configs').setup {
-        ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'ruby', 'json', 'html', 'css' },
+        ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'ruby', 'json', 'html', 'css', 'javascript' },
         -- Autoinstall languages that are not installed
         auto_install = true,
         highlight = { enable = true },
