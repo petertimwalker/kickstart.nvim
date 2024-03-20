@@ -133,6 +133,15 @@ vim.opt.timeoutlen = 300
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
+-- This get's rif of that stupid banner
+-- vim.g.netrw_banner = 0
+
+-- netrw has liststyle types which you can search in \:help netrw
+vim.g.netrw_liststyle = 3
+
+-- size of window
+-- vim.g.netrw_winsize = 25
+
 -- Sets how neovim will display certain whitespace in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
