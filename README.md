@@ -1,3 +1,9 @@
+# What
+
+This is what I use for my nvim config
+
+-------------------------------------
+
 # kickstart.nvim
 
 ## Introduction
