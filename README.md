@@ -2,6 +2,11 @@
 
 This is what I use for my nvim config
 
+## Pain points I need to fix or learn
+- Saving files (There's likely a macro I'm not using)
+- LSP on haml.html files (Maybe solargraph has a setting I'm not using)
+- Tab/buffer management
+
 -------------------------------------
 
 # kickstart.nvim
