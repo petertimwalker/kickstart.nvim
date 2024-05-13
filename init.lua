@@ -215,6 +215,10 @@ vim.keymap.set('n', '<leader>tf', '<cmd>tabnew %<CR>', { desc = 'Open current bu
 -- LazyGit
 vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { noremap = true, silent = true })
 
+-- Copy file names
+vim.keymap.set('n', '<leader>cfp', ':let @*=expand("%:p")<CR>', { desc = 'Copy file name with path' })
+vim.keymap.set('n', '<leader>cfn', ':let @*=expand("%:p:t")<CR>', { desc = 'Copy file name without path' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
