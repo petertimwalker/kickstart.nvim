@@ -18,4 +18,12 @@ return {
       'nvim-lua/plenary.nvim',
     },
   },
+  --quickfix
+  { 'kevinhwang91/nvim-bqf' },
+  {
+    'junegunn/fzf',
+    build = function()
+      vim.fn['fzf#install']()
+    end,
+  },
 }
