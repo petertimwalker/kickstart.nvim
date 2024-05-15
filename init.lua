@@ -838,17 +838,19 @@ require('lazy').setup {
 
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
+    dependencies = { 'RRethy/nvim-treesitter-endwise' },
     build = ':TSUpdate',
     config = function()
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
 
       ---@diagnostic disable-next-line: missing-fields
       require('nvim-treesitter.configs').setup {
-        ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'ruby', 'json', 'html', 'css', 'javascript' },
+        ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'ruby', 'json', 'html', 'css', 'javascript', 'yaml', 'embedded_template' },
         -- Autoinstall languages that are not installed
         auto_install = true,
         highlight = { enable = true },
-        indent = { enable = true },
+        indent = { enable = true, disable = { 'yaml', 'ruby' } },
+        endwise = { enable = true },
       }
 
       -- There are additional nvim-treesitter modules that you can use to interact

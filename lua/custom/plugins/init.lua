@@ -26,4 +26,5 @@ return {
       vim.fn['fzf#install']()
     end,
   },
+  { 'tpope/vim-rails' },
 }
