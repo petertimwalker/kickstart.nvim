@@ -4,6 +4,13 @@
 -- See the kickstart.nvim README for more information
 return {
   {
+    'stevearc/oil.nvim',
+    config = function()
+      require('oil').setup()
+      vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
+    end,
+  },
+  {
     'ThePrimeagen/harpoon',
     branch = 'harpoon2',
     dependencies = { 'nvim-lua/plenary.nvim' },
@@ -90,13 +97,4 @@ return {
     end,
   },
   { 'tpope/vim-rails' },
-  {
-    -- https://github.com/f-person/git-blame.nvim
-    'f-person/git-blame.nvim',
-    event = 'VeryLazy',
-    opts = {
-      enabled = false, -- trigger only with keymap
-      date_format = '%m/%d/%y %H:%M:%S',
-    },
-  },
 }
