@@ -95,6 +95,5 @@ return {
     build = function()
       vim.fn['fzf#install']()
     end,
-  },
-  { 'tpope/vim-rails' },
+  }
 }
